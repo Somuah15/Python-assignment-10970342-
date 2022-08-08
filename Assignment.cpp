@@ -1,7 +1,8 @@
+//A program to calculate the average of prime numbers from 1 to 30
 #include <iostream>
 using namespace std;
 bool isPrime(int n){
-   for(int i = 2; i < n/2; i++){
+   for(int i = 2; i < n; i++){
       if(n%i == 0){
          return false;
       }
@@ -13,13 +14,21 @@ int findPrimeSum(int n){
    for(float i = 2; i <= n; i++){
       if(isPrime(i))
          sumVal += i;
-
    }
    return sumVal;
 }
-int main(){
-   int n = 27,
+int findPrimeCount(int n){
+    int j=0;
+    for(float i = 2; i <= n; i++){
+        if(isPrime(i))
+            j++;
+    }
+    return j;
+}
 
-   cout<<"The sum of prime number between 1 to "<<n<<" is "<<findPrimeSum(n);
+int main(){
+   int n = 30;
+   float x= findPrimeSum(n)/findPrimeCount(n);
+   cout<<"The average of prime numbers from 1 to "<<n<<" is "<<x;
    return 0;
 }
